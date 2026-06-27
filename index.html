@@ -25,4 +25,183 @@
     /* The Photorealistic Cover Plate */
     .cover-plate {
         height: 100vh;
-        display
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url('https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
+        box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+        page-break-after: always;
+    }
+
+    .cover-overlay {
+        background: rgba(15, 12, 10, 0.85);
+        border: 2px solid #b39b72;
+        padding: 40px 20px;
+        margin: 20px;
+        text-align: center;
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+
+    .cover-overlay h1 { color: #e6d7ba; border: none; font-size: 2.2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.9); margin-bottom: 10px; margin-top: 0; }
+    .cover-overlay h3 { color: #b39b72; border: none; font-size: 1.1em; letter-spacing: 2px; }
+    .cover-overlay p { color: #8c8273; text-align: center; margin-top: 30px; font-style: italic; }
+
+    /* Content Wrapper */
+    .content-wrapper { padding: 20px; max-width: 600px; margin: 0 auto; }
+
+    /* Typography */
+    h2 { font-size: 1.5em; text-align: center; border-bottom: 2px solid #c2b59b; padding-bottom: 15px; margin-top: 50px; margin-bottom: 25px; color: #1a1816; }
+    h3 { font-size: 1.2em; text-align: center; font-style: italic; margin-bottom: 20px; }
+    p { text-align: justify; margin-bottom: 20px; }
+
+    blockquote {
+        font-style: italic;
+        border-left: 3px solid #8b0000;
+        margin: 30px 10px;
+        padding-left: 15px;
+        color: #4a453f;
+        background: rgba(0,0,0,0.02);
+        padding: 15px;
+        border-radius: 0 4px 4px 0;
+    }
+
+    .calligraphic-box {
+        border: 1px solid #c2b59b;
+        padding: 25px;
+        text-align: center;
+        margin: 40px 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        border-radius: 4px;
+    }
+    .calligraphic-box p { text-align: center; }
+
+    /* Vintage Image Blending */
+    .illustration {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin: 30px 0;
+        mix-blend-mode: multiply; 
+        filter: sepia(0.8) contrast(1.1) brightness(0.9);
+        border: 1px solid #d3ccbf;
+    }
+
+    /* The Card Layout */
+    .card {
+        border: 1px solid #d3ccbf;
+        border-radius: 6px;
+        padding: 18px;
+        margin-bottom: 25px; 
+        background: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        page-break-inside: avoid;
+    }
+
+    .card-header {
+        font-weight: bold;
+        font-size: 1.15em;
+        border-bottom: 1px dashed #d3ccbf;
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .card-meta { font-size: 0.85em; font-style: italic; color: #665f56; margin-bottom: 12px; display: flex; justify-content: space-between; }
+    .card-notes { font-size: 0.95em; margin-bottom: 15px; }
+
+    .mechanics {
+        font-family: 'Caveat', cursive;
+        color: #8b0000;
+        font-size: 1.4em;
+        line-height: 1.2;
+        display: block;
+        border-top: 1px solid rgba(139, 0, 0, 0.2);
+        padding-top: 12px;
+        margin-top: 12px;
+        transform: rotate(-1deg);
+    }
+
+    .appendix-list { list-style-type: none; padding: 0; }
+    .appendix-list li { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+</style>
+</head>
+<body>
+
+    <div class="cover-plate">
+        <div class="cover-overlay">
+            <h1>A Comprehensive Ledger of Estate Linens</h1>
+            <h3>Volume IV: Winter Storage & Moth Prevention</h3>
+            <p>Compiled by P. Sterling<br>Master of the Wardrobe</p>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+
+        <div class="calligraphic-box">
+            <h2>A Necessary Precaution</h2>
+            <h3>REGARDING UNAUTHORISED PERUSAL</h3>
+            <p>To the Esteemed Initiate: You will have noted, undoubtedly, that the volume you currently hold is bound in a rather unremarkable, slightly scuffed calfskin, bearing an embossed title regarding the storage of winter linens. This is by meticulous design. True security lies in utter, unremitting tedium. No self-respecting thief of the Free City has ever stolen a laundry ledger.</p>
+            <p>However, should a particularly desperate footpad, or worse, an inquisitive employer, breach the clasp, they will immediately encounter the secondary measure. The vellum pages of this treatise have been delicately dusted with a proprietary compound derived from the Potter's Lead Glaze and Nightshade.</p>
+            <p>To the Unauthorised Reader: If you are reading these words, and you are not an active, dues-paying member of the League of the Silver Key, I am afraid you have already absorbed a fatal dose of the aforementioned compound through the pores of your fingers. You have approximately four minutes before the paralysis reaches your diaphragm. I strongly suggest you use this time to find a comfortable, un-upholstered surface upon which to expire. Bodily fluids are frightfully difficult to lift from velvet, and we really must insist upon maintaining a tidy estate.</p>
+            <p><em>Yours in tidy finality,<br>P. Sterling, Guildmaster</em></p>
+        </div>
+
+        <h2>Introduction to the League</h2>
+        <p>To the uninitiated observer traversing the pristine avenues of Verbobonc, the Academy of Domestic Excellence is merely the premier finishing school for the Flanaess's elite domestic staff. To those within our fraternity, however, it is the public guise of the League of the Silver Key. We are an esteemed brotherhood of domestic perfectionists, dedicated equally to maintaining the immaculate tailoring of our employers and ensuring their continued respiration.</p>
+        <p>A true agent of the League seamlessly manages his master's social calendar, polishes his boots to a mirror sheen, and quietly disposes of enemy cutthroats without ever spilling a single drop of blood upon the Baklunish carpets. We do not murder for coin; we proactively dismantle threats to maintain the pristine order of our appointed households.</p>
+
+        <img src="https://images.unsplash.com/photo-1517406856578-8cb55938bf80?q=80&w=800&auto=format&fit=crop" class="illustration" alt="Vintage Keys">
+
+        <h2>1. The Master's Person, Wardrobe & Foyer</h2>
+        <blockquote>"Initiate Higgins once attempted to subdue a rather aggressive half-orc using the Master's finest silk cravat rather than a proper drape cord. Not only was the ruffian merely annoyed, but the cravat was stretched beyond all hope of laundering. Let this be a lesson: always select the proper tool for the exertion."</blockquote>
+
+        <div class="card"><div class="card-header">01 - Sealing Wax (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Secures correspondence; pressed against heavy iron keys for discreet duplication.</div><div class="mechanics">Safely takes impressions of complex dungeon keys, or hermetically seals cracked potion vials and minor gas-emitting vents.</div></div>
+        <div class="card"><div class="card-header">02 - Silver Hatpin (Negligible)</div><div class="card-meta"><span>Concealability: Lapel</span></div><div class="card-notes">Secures cravats; acts as a discreet testing needle for reactive poisons in the Master's wine.</div><div class="mechanics">Bypasses city weapon checks. Functions as a diminutive Dagger (Speed Factor 2, Damage 1d3). Permits x2 Backstab multiplier. Vectors Type M contact poisons.</div></div>
+        <div class="card"><div class="card-header">03 - Boot Polish (0.5 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Maintains leather; serves as an entirely non-flammable substitute for common weaponblack.</div><div class="mechanics">Blacking out the gleam of metal gear grants a +10% situational bonus to Hide in Shadows in dark corridors.</div></div>
+        <div class="card"><div class="card-header">04 - Strong Cologne (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Masks city odours; tactically dropped to overwhelm the olfactory senses of pursuing guard hounds.</div><div class="mechanics">Shattered on the floor, it ruins the scent trail. Canine pursuers must roll a Save vs. Poison or be unable to track the party.</div></div>
+        <div class="card"><div class="card-header">05 - Silk Handkerchiefs (Negligible)</div><div class="card-meta"><span>Concealability: Sleeve</span></div><div class="card-notes">Silences the irritating jingle of coin pouches; twists neatly into a taut, silent garrotte.</div><div class="mechanics">Tied over the mouth, it acts as a rudimentary filter granting a +2 bonus to Saving Throws vs. inhaled dungeon spores. Resolves as a Grapple attack.</div></div>
+
+        <img src="https://images.unsplash.com/photo-1580228303027-e4359670f5e1?q=80&w=800&auto=format&fit=crop" class="illustration" alt="Quill and ink on parchment">
+
+        <h2>10. Formal Affairs</h2>
+        <blockquote>"To engage in fisticuffs at Court is to invite social ruin, yet the Master is never more vulnerable than when mingling with the aristocracy. When a disguised cutthroat moves against him during a High Mass or a masquerade, you must intercept and permanently dismantle the threat using only what the event itself provides, ensuring the Master's polite conversation is never interrupted."</blockquote>
+
+        <div class="card"><div class="card-header">01 - St Cuthbert's Cudgel (2 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">A ceremonial offering. A perfectly legal bludgeon welcomed warmly in any congregation, ideal for intercepting a zealot's blade.</div><div class="mechanics">Functions as a Club (Speed Factor 4, Damage 1d6). Permits a standard Backstab if flanking an engaged assassin.</div></div>
+        <div class="card"><div class="card-header">02 - Silver Service Bell (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Summons staff. The sudden, high-pitched ringing is deployed precisely to shatter the fragile concentration of an enemy wizard.</div><div class="mechanics">Target spellcaster must successfully roll a Save vs. Paralyzation or lose their currently casting spell due to the sharp distraction.</div></div>
+        <div class="card"><div class="card-header">03 - Beeswax Votive Candles (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Lit in remembrance. The scalding wax is flicked instantly into the eyes of a duellist lunging from the chapel shadows.</div><div class="mechanics">Requires a Called Shot (-4 to hit). On a success, the target is Blinded for 1d4 rounds, suffering a -4 penalty to attack rolls.</div></div>
+        <div class="card"><div class="card-header">04 - Silk Hand Fan (Negligible)</div><div class="card-meta"><span>Concealability: Sleeve</span></div><div class="card-notes">Cools the brow. The wooden ribs conceal tiny darts. Blown discreetly during a coughing fit to silently drop a sniper.</div><div class="mechanics">Functions as a Blowgun Dart (Speed Factor 5). Delivers Type O Injected Poison (Save vs. Poison or be Paralysed).</div></div>
+
+        <h2>APPENDIX I: THE SENESCHAL'S PROBLEM-SOLVING INDEX</h2>
+        <h3>A Quick-Reference Guide for Sudden Indiscretions</h3>
+        <blockquote>"A gentleman’s gentleman does not panic when confronted by a gelatinous cube, a jammed portcullis, or an assassination attempt during the salad course. He simply diagnoses the inconvenience, selects the appropriate implement, and restores order before the Master's tea grows cold." - P. Sterling</blockquote>
+        <p><span class="mechanics" style="border:none; padding:0; transform:none; font-size:1em; display:block; text-align:center;">Field Agent Note: Memorise these categorisations. When the dungeon collapses, you will not have time to read alphabetically. - Initiate Thorne</span></p>
+
+        <h3>I. Apprehending & Silencing the Uncouth</h3>
+        <p><em>When a sentry must be quietly removed from his post without the vulgarity of drawn blood.</em></p>
+        <ul class="appendix-list">
+            <li><strong>The Silent Chokehold:</strong> Silk Handkerchiefs [1.05], Cheese Wire [2.01], Measuring Tape [8.11]<br><span class="mechanics">Resolves as Grapple; silences verbal spellcasting.</span></li>
+            <li><strong>The Polite Concussion:</strong> Hardwood Rolling Pin [2.16], Brass Paperweight [3.06], Carpenter's Mallet [8.03], White Formal Gloves [10.07]<br><span class="mechanics">x2 Backstab multiplier for knockout blows.</span></li>
+            <li><strong>Chemical Slumber:</strong> Laudanum Tincture [4.10], Church Incense Cones [10.19]<br><span class="mechanics">Save vs. Poison or fall into deep sleep.</span></li>
+        </ul>
+
+        <h3>II. Misdirection & Sensory Deprivation</h3>
+        <p><em>When the party must pass unseen, or an enemy spellcaster must be violently interrupted mid-incantation.</em></p>
+        <ul class="appendix-list">
+            <li><strong>Auditory Decoys:</strong> Brass Pocket Watch [1.20], Heavy Chess Piece [3.15], Rusty Iron Hinges [7.19]<br><span class="mechanics">Draws sentry attention away from the party's Hide in Shadows attempt.</span></li>
+            <li><strong>Blinding Powders:</strong> Sack of Gravel [5.15], Plaster Dust [7.14], Coal Scuttle [7.20], Beeswax Votive Candles [10.03]<br><span class="mechanics">Target is Blinded; loses AC dexterity bonuses and line-of-sight.</span></li>
+            <li><strong>Respiratory Disruption:</strong> Heavy Pepper Mill [2.18], Ammonia Spirits [4.06], Ground Cayenne Pepper [6.17]<br><span class="mechanics">Interrupts somatic/verbal components; Save vs. Poison to act.</span></li>
+        </ul>
+
+        <div class="calligraphic-box">
+            <h2>THE OATH OF THE SILVER KEY</h2>
+            <p>"I do hereby swear, upon my honour as a gentleman and a servant, to uphold the pristine order of my appointed estate. I shall wield the mundane as the extraordinary. I shall allow no disruption to soil the Master's carpets, nor any chaos to interrupt the evening tea. My discretion is my armour, and my etiquette is my weapon."</p>
+            <p style="text-align: right; margin-top: 10px;"><em>Signature of Initiate: ________________________</em></p>
+        </div>
+
+    </div> </body>
+</html>
