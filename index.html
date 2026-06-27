@@ -7,192 +7,340 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
-    /* Mobile-First & Print Settings */
-    @page { size: 80mm 140mm; margin: 0; }
-
-    body {
-        background-color: #f8f5ee; 
-        background-image: radial-gradient(circle, rgba(0,0,0,0.03) 1px, transparent 1px);
-        background-size: 24px 24px;
-        font-family: 'Playfair Display', serif;
-        color: #2c2825; 
-        margin: 0;
-        padding: 0;
-        line-height: 1.6; 
-        font-size: 16px; 
+    body { 
+        font-family: 'Playfair Display', 'Times New Roman', serif; 
+        color: #1a1a1a; 
+        margin: 0; 
+        padding: 0; 
+        line-height: 1.4; 
+        background-color: #f4f1ea; 
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
     }
 
-    /* The New Custom Image Cover Plate */
-    .cover-plate {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        page-break-after: always;
+    .cover-image {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+        display: block;
+        margin: 0 auto 40px auto;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .cover-plate img {
-        max-width: 100%;
-        max-height: 95vh;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        border-radius: 4px;
+    h2, h3 { 
+        text-align: center; 
+        border-bottom: 3px double #333; 
+        padding-bottom: 5px; 
+        margin-top: 15px; 
+        page-break-after: avoid; 
     }
-
-    .cover-overlay h1 { color: #e6d7ba; border: none; font-size: 2.2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.9); margin-bottom: 10px; margin-top: 0; }
-    .cover-overlay h3 { color: #b39b72; border: none; font-size: 1.1em; letter-spacing: 2px; }
-    .cover-overlay p { color: #8c8273; text-align: center; margin-top: 30px; font-style: italic; }
-
-    /* Content Wrapper */
-    .content-wrapper { padding: 20px; max-width: 600px; margin: 0 auto; }
-
-    /* Typography */
-    h2 { font-size: 1.5em; text-align: center; border-bottom: 2px solid #c2b59b; padding-bottom: 15px; margin-top: 50px; margin-bottom: 25px; color: #1a1816; }
-    h3 { font-size: 1.2em; text-align: center; font-style: italic; margin-bottom: 20px; }
-    p { text-align: justify; margin-bottom: 20px; }
-
-    blockquote {
-        font-style: italic;
-        border-left: 3px solid #8b0000;
-        margin: 30px 10px;
-        padding-left: 15px;
-        color: #4a453f;
-        background: rgba(0,0,0,0.02);
-        padding: 15px;
+    h2 { font-size: 1.4em; margin-bottom: 15px; border-bottom: none; }
+    h3 { font-size: 1.1em; font-style: italic; border-bottom: 1px solid #333; }
+    p { text-align: justify; font-size: 0.95em; margin-bottom: 10px; }
+    
+    blockquote { 
+        font-style: italic; 
+        border-left: 3px solid #333; 
+        margin: 20px 0; 
+        padding-left: 15px; 
+        color: #444; 
+        background: rgba(0,0,0,0.03); 
+        padding: 15px; 
+        font-size: 0.95em; 
         border-radius: 0 4px 4px 0;
     }
 
-    .calligraphic-box {
-        border: 1px solid #c2b59b;
-        padding: 25px;
-        text-align: center;
-        margin: 40px 0;
-        background-color: rgba(255, 255, 255, 0.5);
-        box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        border-radius: 4px;
+    .calligraphic-box, .text-card { 
+        border: 1px solid #b3a998; 
+        border-radius: 8px; 
+        padding: 25px; 
+        margin: 20px 0 40px 0; 
+        background: rgba(255, 255, 255, 0.7); 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
+    .calligraphic-box h2 { border-bottom: 3px double #333; }
     .calligraphic-box p { text-align: center; }
-
-    /* Vintage Image Blending */
-    .illustration {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 6px;
-        margin: 30px 0;
-        mix-blend-mode: multiply; 
-        filter: sepia(0.8) contrast(1.1) brightness(0.9);
-        border: 1px solid #d3ccbf;
-    }
-
-    /* The Card Layout */
-    .card {
-        border: 1px solid #d3ccbf;
-        border-radius: 6px;
-        padding: 18px;
-        margin-bottom: 25px; 
-        background: rgba(255, 255, 255, 0.7);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        page-break-inside: avoid;
-    }
-
-    .card-header {
-        font-weight: bold;
-        font-size: 1.15em;
-        border-bottom: 1px dashed #d3ccbf;
-        padding-bottom: 8px;
-        margin-bottom: 12px;
+    
+    .section-title {
+        text-align: center;
+        font-size: 1.6em;
         text-transform: uppercase;
         letter-spacing: 1px;
+        border-bottom: 2px solid #333;
+        margin: 40px 0 20px 0;
+        padding-bottom: 10px;
     }
 
-    .card-meta { font-size: 0.85em; font-style: italic; color: #665f56; margin-bottom: 12px; display: flex; justify-content: space-between; }
-    .card-notes { font-size: 0.95em; margin-bottom: 15px; }
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+    }
 
-    .mechanics {
-        font-family: 'Caveat', cursive;
-        color: #8b0000;
-        font-size: 1.4em;
-        line-height: 1.2;
-        display: block;
-        border-top: 1px solid rgba(139, 0, 0, 0.2);
-        padding-top: 12px;
-        margin-top: 12px;
+    .card { 
+        border: 1px solid #b3a998; 
+        border-radius: 8px; 
+        padding: 15px; 
+        background: rgba(255, 255, 255, 0.8); 
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card-header { 
+        font-weight: bold; 
+        font-size: 1em; 
+        border-bottom: 1px solid #d3ccbf; 
+        padding-bottom: 8px; 
+        margin-bottom: 10px; 
+        text-transform: uppercase; 
+        color: #222;
+    }
+    
+    .card-meta { 
+        font-size: 0.85em; 
+        font-style: italic; 
+        color: #555; 
+        margin-bottom: 10px; 
+        display: flex; 
+        justify-content: space-between; 
+    }
+    
+    .card-notes { 
+        font-size: 0.9em; 
+        margin-bottom: 15px; 
+        flex-grow: 1;
+    }
+    
+    .mechanics { 
+        font-family: 'Caveat', 'Brush Script MT', cursive; 
+        color: #8b0000; 
+        font-size: 1.25em; 
+        line-height: 1.2; 
+        display: block; 
+        border-top: 1px dashed #e0d8c8; 
+        padding-top: 10px; 
         transform: rotate(-1deg);
+        margin-top: auto; 
     }
 
-    .appendix-list { list-style-type: none; padding: 0; }
-    .appendix-list li { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .appendix-list { list-style-type: none; padding: 0; margin: 0; }
+    .appendix-list li { margin-bottom: 15px; font-size: 0.9em; border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
+    
+    .watermark { 
+        position: fixed; 
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        opacity: 0.03; 
+        font-size: 15vw; 
+        z-index: -1; 
+        pointer-events: none;
+    }
+
+    @media print {
+        .page-break { page-break-before: always; }
+        .card { break-inside: avoid; }
+        .card-grid { display: block; }
+        .card { margin-bottom: 15px; }
+    }
 </style>
 </head>
 <body>
+<div class="watermark">⚷</div>
 
-    <div class="cover-plate">
-        <img src="cover-image.png" alt="A Comprehensive Ledger of Estate Linens and Haberdashery">
+<div class="container">
+    <img src="cover-image.png" alt="A Comprehensive Ledger of Estate Linens and Haberdashery" class="cover-image">
+
+    <div class="calligraphic-box">
+        <h2>A Necessary Precaution</h2>
+        <h3>REGARDING UNAUTHORISED PERUSAL</h3>
+        <p>To the Esteemed Initiate: You will have noted, undoubtedly, that the volume you currently hold is bound in a rather unremarkable, slightly scuffed calfskin, bearing an embossed title regarding the storage of winter linens. This is by meticulous design. True security lies in utter, unremitting tedium. No self-respecting thief of the Free City has ever stolen a laundry ledger.</p>
+        <p>However, should a particularly desperate footpad, or worse, an inquisitive employer, breach the clasp, they will immediately encounter the secondary measure. The vellum pages of this treatise have been delicately dusted with a proprietary compound derived from the Potter's Lead Glaze and Nightshade.</p>
+        <p>To the Unauthorised Reader: If you are reading these words, and you are not an active, dues-paying member of the League of the Silver Key, I am afraid you have already absorbed a fatal dose of the aforementioned compound through the pores of your fingers. You have approximately four minutes before the paralysis reaches your diaphragm. I strongly suggest you use this time to find a comfortable, un-upholstered surface upon which to expire. Bodily fluids are frightfully difficult to lift from velvet, and we really must insist upon maintaining a tidy estate.</p>
+        <p><em>Yours in tidy finality,<br>P. Sterling, Guildmaster</em></p>
     </div>
 
-    <div class="content-wrapper">
-
-        <div class="calligraphic-box">
-            <h2>A Necessary Precaution</h2>
-            <h3>REGARDING UNAUTHORISED PERUSAL</h3>
-            <p>To the Esteemed Initiate: You will have noted, undoubtedly, that the volume you currently hold is bound in a rather unremarkable, slightly scuffed calfskin, bearing an embossed title regarding the storage of winter linens. This is by meticulous design. True security lies in utter, unremitting tedium. No self-respecting thief of the Free City has ever stolen a laundry ledger.</p>
-            <p>However, should a particularly desperate footpad, or worse, an inquisitive employer, breach the clasp, they will immediately encounter the secondary measure. The vellum pages of this treatise have been delicately dusted with a proprietary compound derived from the Potter's Lead Glaze and Nightshade.</p>
-            <p>To the Unauthorised Reader: If you are reading these words, and you are not an active, dues-paying member of the League of the Silver Key, I am afraid you have already absorbed a fatal dose of the aforementioned compound through the pores of your fingers. You have approximately four minutes before the paralysis reaches your diaphragm. I strongly suggest you use this time to find a comfortable, un-upholstered surface upon which to expire. Bodily fluids are frightfully difficult to lift from velvet, and we really must insist upon maintaining a tidy estate.</p>
-            <p><em>Yours in tidy finality,<br>P. Sterling, Guildmaster</em></p>
-        </div>
-
-        <h2>Introduction to the League</h2>
+    <div class="text-card">
+        <h2 class="section-title" style="border: none; padding: 0; margin-top: 0;">Introduction to the League</h2>
         <p>To the uninitiated observer traversing the pristine avenues of Verbobonc, the Academy of Domestic Excellence is merely the premier finishing school for the Flanaess's elite domestic staff. To those within our fraternity, however, it is the public guise of the League of the Silver Key. We are an esteemed brotherhood of domestic perfectionists, dedicated equally to maintaining the immaculate tailoring of our employers and ensuring their continued respiration.</p>
         <p>A true agent of the League seamlessly manages his master's social calendar, polishes his boots to a mirror sheen, and quietly disposes of enemy cutthroats without ever spilling a single drop of blood upon the Baklunish carpets. We do not murder for coin; we proactively dismantle threats to maintain the pristine order of our appointed households.</p>
+        
+        <h3 style="margin-top: 30px;">The Haberdasher's Cipher</h3>
+        <p>Should you encounter a fellow seneschal whilst in the employ of a different House, it is vital to communicate the status of your wardrobe without arousing suspicion. Memorise the following phrases:</p>
+        <ul class="appendix-list" style="padding-left: 10px;">
+        <li><strong>"The winter woollens require an airing."</strong> A threat to the Master has been identified and must be disposed of outside the bounds of the estate.</li>
+        <li><strong>"I fear the claret has stained the damask."</strong> An intruder has been neutralised indoors; require immediate assistance with sanitisation and alibis.</li>
+        <li><strong>"The Master requires a stiffer collar."</strong> The current employer is weak-willed and susceptible to magical charm or coercion. Heightened defensive posture required.</li>
+        <li><strong>"The moths have found the cashmere."</strong> The estate is compromised by an unseen rogue or spy. Initiate lockdown protocols and prepare the hidden armaments.</li>
+        </ul>
 
-        <img src="https://images.unsplash.com/photo-1517406856578-8cb55938bf80?q=80&w=800&auto=format&fit=crop" class="illustration" alt="Vintage Keys">
+        <h3 style="margin-top: 30px;">The Art of the Mundane Arsenal</h3>
+        <p>It is a truth universally acknowledged within our profession that the modern gentleman is frequently prone to attracting the attentions of individuals whose motives are entirely disagreeable. We at the League operate under the firm conviction that overt violence is fundamentally vulgar.</p>
+        <p>Consequently, it falls upon the gentleman's personal gentleman to manage these unseemly disruptions. The amateur assassin reaches for a conspicuous poisoned dagger. The professional counter-assassin recognises that the average estate is positively brimming with objects of profound lethality and utility, provided one possesses the imagination to apply them correctly.</p>
+    </div>
 
-        <h2>1. The Master's Person, Wardrobe & Foyer</h2>
-        <blockquote>"Initiate Higgins once attempted to subdue a rather aggressive half-orc using the Master's finest silk cravat rather than a proper drape cord. Not only was the ruffian merely annoyed, but the cravat was stretched beyond all hope of laundering. Let this be a lesson: always select the proper tool for the exertion."</blockquote>
+    <div class="page-break"></div>
 
+    <h2 class="section-title">1. The Master's Person, Wardrobe & Foyer</h2>
+    <blockquote>"Initiate Higgins once attempted to subdue a rather aggressive half-orc using the Master's finest silk cravat rather than a proper drape cord. Not only was the ruffian merely annoyed, but the cravat was stretched beyond all hope of laundering. Let this be a lesson: always select the proper tool for the exertion."</blockquote>
+
+    <div class="card-grid">
         <div class="card"><div class="card-header">01 - Sealing Wax (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Secures correspondence; pressed against heavy iron keys for discreet duplication.</div><div class="mechanics">Safely takes impressions of complex dungeon keys, or hermetically seals cracked potion vials and minor gas-emitting vents.</div></div>
         <div class="card"><div class="card-header">02 - Silver Hatpin (Negligible)</div><div class="card-meta"><span>Concealability: Lapel</span></div><div class="card-notes">Secures cravats; acts as a discreet testing needle for reactive poisons in the Master's wine.</div><div class="mechanics">Bypasses city weapon checks. Functions as a diminutive Dagger (Speed Factor 2, Damage 1d3). Permits x2 Backstab multiplier. Vectors Type M contact poisons.</div></div>
         <div class="card"><div class="card-header">03 - Boot Polish (0.5 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Maintains leather; serves as an entirely non-flammable substitute for common weaponblack.</div><div class="mechanics">Blacking out the gleam of metal gear grants a +10% situational bonus to Hide in Shadows in dark corridors.</div></div>
         <div class="card"><div class="card-header">04 - Strong Cologne (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Masks city odours; tactically dropped to overwhelm the olfactory senses of pursuing guard hounds.</div><div class="mechanics">Shattered on the floor, it ruins the scent trail. Canine pursuers must roll a Save vs. Poison or be unable to track the party.</div></div>
         <div class="card"><div class="card-header">05 - Silk Handkerchiefs (Negligible)</div><div class="card-meta"><span>Concealability: Sleeve</span></div><div class="card-notes">Silences the irritating jingle of coin pouches; twists neatly into a taut, silent garrotte.</div><div class="mechanics">Tied over the mouth, it acts as a rudimentary filter granting a +2 bonus to Saving Throws vs. inhaled dungeon spores. Resolves as a Grapple attack.</div></div>
+        <div class="card"><div class="card-header">06 - Bone Comb (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Parts hair impeccably; the rigid bone teeth may be snapped off to serve secretive purposes.</div><div class="mechanics">The teeth act as disposable, non-metallic shims to safely pin down pressure plates without triggering magnetic alarms.</div></div>
+        <div class="card"><div class="card-header">07 - Chamois Cloth (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Ensures a streak-free shine on the silver; wrapped around the hands, it leaves zero unsightly fingerprints.</div><div class="mechanics">Muffles the telltale click of a lock mechanism or the thud of dropped gear. Essential for safely handling poisoned items.</div></div>
+        <div class="card"><div class="card-header">08 - Hickory Walking Cane (2 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">An elegant accessory for city strolls. Serves flawlessly as a three-foot pole for the discerning adventurer.</div><div class="mechanics">Taps flagstones to safely trigger pit traps from a polite distance. Functions as a Club (Speed Factor 4, Damage 1d6).</div></div>
+        <div class="card"><div class="card-header">09 - Brass Cloak Pins (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Secures heavy winter cloaks; scattered across a darkened hallway, they await careless footfalls.</div><div class="mechanics">Acts as a mundane scattering of Caltrops. Halts charging assassins in the dark; requires a Save vs. Paralyzation or movement is halted.</div></div>
+        <div class="card"><div class="card-header">10 - Long-handled Snuffer (1 lb)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">A brass cone on a wooden pole, utilised for extinguishing high chandeliers from a polite distance.</div><div class="mechanics">Reaches over tripwires to safely hook dropped keys, or instantly plunges a room into total darkness to facilitate an ambush.</div></div>
+        <div class="card"><div class="card-header">11 - Woollen Cloak (3 lbs)</div><div class="card-meta"><span>Concealability: Worn</span></div><div class="card-notes">Dense, dark wool worn on errands. Thrown entirely over a taut tripwire to allow the party to step over it.</div><div class="mechanics">Wrapped thickly around the off-hand, it catches an assassin's blade, granting a +1 AC parrying bonus.</div></div>
+        <div class="card"><div class="card-header">12 - Straight Razor (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Essential for the Master's morning shave. A surgical edge that leaves surrounding mechanisms undisturbed.</div><div class="mechanics">Slices tension-wires cleanly. Functions as a Knife (Speed Factor 2, Damage 1d3) for silent, x2 Backstab dispatches.</div></div>
+        <div class="card"><div class="card-header">13 - Grooming Shears (0.5 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Trims the Master's beard. A vital tool for disarming traps where snapping a wire is preferable to untying it.</div><div class="mechanics">Can be magnetised by stroking with lodestone to function as a makeshift compass needle when floated on a cork in water.</div></div>
+        <div class="card"><div class="card-header">14 - Smelling Salts (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Revives swooning guests; a sharp waft under the nose snaps allies out of chemically induced comas.</div><div class="mechanics">Instantly wakes party members rendered unconscious by Subdual damage, drow sleep poison, or ordinary exhaustion.</div></div>
+        <div class="card"><div class="card-header">15 - Needle & Silk Thread (Negligible)</div><div class="card-meta"><span>Concealability: Lapel</span></div><div class="card-notes">Mends torn tabards. The ultimate precaution against trapped chests and rigged doors.</div><div class="mechanics">Tied to a latch and pulled from twenty feet away behind solid stone cover. Bypasses the kill-zone of needle traps entirely.</div></div>
+        <div class="card"><div class="card-header">16 - Small Metal Mirror (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">For grooming checks. Extended past a blind corner to safely spot a crossbow ambush.</div><div class="mechanics">Reflects a beam of torchlight down a corridor to silently signal allies. Negates the need to Save vs. Petrification against medusae.</div></div>
+        <div class="card"><div class="card-header">17 - Tailor's Chalk (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Marks hems and measures cloth. Essential anti-death insurance for navigating subterranean labyrinths.</div><div class="mechanics">Marks doors to map looping corridors. Takes safe rubbings of standard warning runes for the party wizard to translate later.</div></div>
+        <div class="card"><div class="card-header">18 - Funnel and Oil (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Refills the reading lamps; gently lubricates rusty locks and silences squeaky hinges.</div><div class="mechanics">Poured precisely under a stubborn wooden door and ignited, or guarantees a decorous silence when opening complaining cellar doors.</div></div>
+        <div class="card"><div class="card-header">19 - Collar Stiffeners (Negligible)</div><div class="card-meta"><span>Concealability: Collar</span></div><div class="card-notes">Maintains pristine collar rigidity. Unassuming strips of rigid bone or brass.</div><div class="mechanics">Easily palmed during a guard pat-down. Functions as emergency tension wrenches to pick locks; negates penalties for lacking tools.</div></div>
+        <div class="card"><div class="card-header">20 - Iron Estate Keys (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">A heavy brass ring holding the mundane keys to the estate's pantries and cellars.</div><div class="mechanics">Dropped down a dark pit to gauge the depth by the resulting clatter, or tossed down a side corridor to distract dim-witted guards.</div></div>
+    </div>
 
-        <img src="https://images.unsplash.com/photo-1580228303027-e4359670f5e1?q=80&w=800&auto=format&fit=crop" class="illustration" alt="Quill and ink on parchment">
+    <div class="page-break"></div>
 
-        <h2>10. Formal Affairs</h2>
-        <blockquote>"To engage in fisticuffs at Court is to invite social ruin, yet the Master is never more vulnerable than when mingling with the aristocracy. When a disguised cutthroat moves against him during a High Mass or a masquerade, you must intercept and permanently dismantle the threat using only what the event itself provides, ensuring the Master's polite conversation is never interrupted."</blockquote>
+    <h2 class="section-title">2. The Kitchens, Pantry & Scullery</h2>
+    <blockquote>"Never underestimate the scullery. During a most inconvenient incursion by smugglers in the Free City, it was not the City Watch who saved the evening, but the Head Cook. She demonstrated to a masked ruffian that a cast-iron skillet to the temple is a universally understood language, requiring no translation whatsoever."</blockquote>
 
-        <div class="card"><div class="card-header">01 - St Cuthbert's Cudgel (2 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">A ceremonial offering. A perfectly legal bludgeon welcomed warmly in any congregation, ideal for intercepting a zealot's blade.</div><div class="mechanics">Functions as a Club (Speed Factor 4, Damage 1d6). Permits a standard Backstab if flanking an engaged assassin.</div></div>
-        <div class="card"><div class="card-header">02 - Silver Service Bell (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Summons staff. The sudden, high-pitched ringing is deployed precisely to shatter the fragile concentration of an enemy wizard.</div><div class="mechanics">Target spellcaster must successfully roll a Save vs. Paralyzation or lose their currently casting spell due to the sharp distraction.</div></div>
-        <div class="card"><div class="card-header">03 - Beeswax Votive Candles (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Lit in remembrance. The scalding wax is flicked instantly into the eyes of a duellist lunging from the chapel shadows.</div><div class="mechanics">Requires a Called Shot (-4 to hit). On a success, the target is Blinded for 1d4 rounds, suffering a -4 penalty to attack rolls.</div></div>
-        <div class="card"><div class="card-header">04 - Silk Hand Fan (Negligible)</div><div class="card-meta"><span>Concealability: Sleeve</span></div><div class="card-notes">Cools the brow. The wooden ribs conceal tiny darts. Blown discreetly during a coughing fit to silently drop a sniper.</div><div class="mechanics">Functions as a Blowgun Dart (Speed Factor 5). Delivers Type O Injected Poison (Save vs. Poison or be Paralysed).</div></div>
+    <div class="card-grid">
+        <div class="card"><div class="card-header">01 - Cheese Wire (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Cleanly sections large wheels of cheese; drawn taut to quietly slice through thin wooden alarm tripwires.</div><div class="mechanics">Improvised garrotte. Requires a strike from surprise. Prevents the target from vocalising alarms or casting verbal spells.</div></div>
+        <div class="card"><div class="card-header">02 - Cast Iron Skillet (5 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Heavy cookware; utilised to casually deflect incoming blows or deliver blunt-force trauma to a cranium.</div><div class="mechanics">An excellent impromptu parrying device. Grants a +1 AC bonus. Functions as a Club (Speed Factor 4, Damage 1d6).</div></div>
+        <div class="card"><div class="card-header">03 - Chef's Meat Skewer (0.5 lbs)</div><div class="card-meta"><span>Concealability: Sleeve</span></div><div class="card-notes">Tests meat doneness; perfectly designed to politely and deeply pierce the gaps in a ruffian's chainmail.</div><div class="mechanics">Jammed into the wall track of a sliding stone block trap to halt its descent. Ideal vector for Type O injected poison.</div></div>
+        <div class="card"><div class="card-header">04 - Lemon Juice / Vinegar (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">A culinary acid that cleans stubborn bloodstains, strips rust, or blinds if squirted in the eyes.</div><div class="mechanics">Safely reveals invisible ink left by informants. A splash in the eyes of a charging goblin forces a Save vs. Poison or be Blinded.</div></div>
+        <div class="card"><div class="card-header">05 - Sack of Fine Flour (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">An essential baking staple; dusted lightly across a threshold to reveal the footprints of sneaking rogues.</div><div class="mechanics">Tossed into the air over an open flame, it creates a devastating fuel-air explosion (treat as a 2d6 area of effect fire attack).</div></div>
+        <div class="card"><div class="card-header">06 - Corkscrew (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Opens vintage wines; incidentally causes terrible, twisting puncture wounds that are frightfully difficult to stitch.</div><div class="mechanics">Used to silently bore peepholes through wooden dungeon doors, allowing observation of the next room before breaching.</div></div>
+        <div class="card"><div class="card-header">07 - Meat Tenderiser (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Softens tough cuts of meat; delivers a brutal, spiked concussive strike to those lacking proper manners.</div><div class="mechanics">Crushes the fragile carapaces of giant subterranean beetles, or pulverises stubborn padlocks when finesse has failed.</div></div>
+        <div class="card"><div class="card-header">08 - Coarse Rock Salt (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Preserves the winter meats; poured directly into an open wound, it causes excruciating, distracting agony.</div><div class="mechanics">Thrown by the handful onto an icy cavern floor to create safe footing, or tossed into the eyes to disrupt line-of-sight spellcasting.</div></div>
+        <div class="card"><div class="card-header">09 - Baking Soda / Lye (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">A heavy-duty cleaning agent; highly caustic when mixed with water, stripping grease and flesh alike.</div><div class="mechanics">Neutralises acidic traps left by less refined minds. Creates a hissing, blinding chemical splash when thrown onto wet slime creatures.</div></div>
+        <div class="card"><div class="card-header">10 - Block of Beeswax (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Polishes fine wood; effectively seals doorframe cracks against unpleasant, creeping poison vapours.</div><div class="mechanics">Waterproofs delicate scrolls. Takes a perfect imprint of a keyhole, or plugs the party's ears to ignore a siren's song.</div></div>
+        <div class="card"><div class="card-header">11 - Brass Polish (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">A mildly abrasive paste; rubbed onto a flat piece of tin to create a temporary mirror to check corners.</div><div class="mechanics">Spread across a smooth stone floor, it renders the surface impossibly frictionless, turning a sloped corridor into a deadly slide.</div></div>
+        <div class="card"><div class="card-header">12 - Wooden Door Wedges (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Simple hardwood wedges utilised to keep drafty estate doors propped open for the serving staff.</div><div class="mechanics">Driven under a door to deny pursuers entry. Spiked open behind the party to ensure an unblockable retreat path.</div></div>
+        <div class="card"><div class="card-header">13 - Butcher's Apron (4 lbs)</div><div class="card-meta"><span>Concealability: Worn</span></div><div class="card-notes">A boiled leather apron meant to protect the staff's clothing from offal and blood.</div><div class="mechanics">Worn discreetly beneath the formal tailcoat, it acts as hidden armour without arousing suspicion (Equivalent to Leather Armour, AC 8).</div></div>
+        <div class="card"><div class="card-header">14 - Raw Honey (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Sweetens the afternoon teas; acts as a natural, sterile antibacterial seal for deep wounds.</div><div class="mechanics">Vastly improves the efficacy of mundane medical poultices. Smeared on the floor, it halts the progress of rolling coin alarms.</div></div>
+        <div class="card"><div class="card-header">15 - Cast Iron Kettle (4 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Used to boil water for morning ablutions. A dense, heavy vessel that retains heat superbly.</div><div class="mechanics">Dropped onto the helm of an unsuspecting guard from a ledge above, it deals concussive damage and ensures immediate, ringing deafness.</div></div>
+        <div class="card"><div class="card-header">16 - Hardwood Rolling Pin (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Flattens pastry dough; perfectly balanced for a polite, entirely non-lethal tap to the occiput of a trespasser.</div><div class="mechanics">An improvised bludgeon ideal for rendering a target unconscious without the vulgarity of drawing blood. Deals Subdual damage; permits x2 Backstab.</div></div>
+        <div class="card"><div class="card-header">17 - Tin Cheese Grater (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Grates hard cheeses. When aggressively applied to a rope, it silently frays the cord.</div><div class="mechanics">Sabotages the ropes of enemy siege engines or climbing lines, ensuring a catastrophic failure at the most inconvenient moment.</div></div>
+        <div class="card"><div class="card-header">18 - Heavy Pepper Mill (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Grinds fresh peppercorns. Can be forcefully disassembled to unleash a localised cloud of sneezing powder.</div><div class="mechanics">Tossed at a wizard mid-incantation, the resulting sneezing fit forces a save to avoid spoiling the spell's somatic components.</div></div>
+        <div class="card"><div class="card-header">19 - Carving Fork (1 lb)</div><div class="card-meta"><span>Concealability: Sleeve</span></div><div class="card-notes">Steadies the Sunday roast. An elegant, twin-pronged implement for precise culinary manipulation.</div><div class="mechanics">Jammed into the complex rotating gears of a descending ceiling trap, it seizes the mechanism long enough for the party to crawl to safety.</div></div>
+        <div class="card"><div class="card-header">20 - Garlic Press (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Crushes cloves. Exceptional for firmly extracting vital confessions from uncooperative captive thugs.</div><div class="mechanics">Applying agonising pressure to a captive's fingers grants a -2 penalty to their Morale checks, ensuring swift cooperation.</div></div>
+    </div>
 
-        <h2>APPENDIX I: THE SENESCHAL'S PROBLEM-SOLVING INDEX</h2>
-        <h3>A Quick-Reference Guide for Sudden Indiscretions</h3>
-        <blockquote>"A gentleman’s gentleman does not panic when confronted by a gelatinous cube, a jammed portcullis, or an assassination attempt during the salad course. He simply diagnoses the inconvenience, selects the appropriate implement, and restores order before the Master's tea grows cold." - P. Sterling</blockquote>
-        <p><span class="mechanics" style="border:none; padding:0; transform:none; font-size:1em; display:block; text-align:center;">Field Agent Note: Memorise these categorisations. When the dungeon collapses, you will not have time to read alphabetically. - Initiate Thorne</span></p>
+    <div class="page-break"></div>
 
-        <h3>I. Apprehending & Silencing the Uncouth</h3>
-        <p><em>When a sentry must be quietly removed from his post without the vulgarity of drawn blood.</em></p>
-        <ul class="appendix-list">
-            <li><strong>The Silent Chokehold:</strong> Silk Handkerchiefs [1.05], Cheese Wire [2.01], Measuring Tape [8.11]<br><span class="mechanics">Resolves as Grapple; silences verbal spellcasting.</span></li>
-            <li><strong>The Polite Concussion:</strong> Hardwood Rolling Pin [2.16], Brass Paperweight [3.06], Carpenter's Mallet [8.03], White Formal Gloves [10.07]<br><span class="mechanics">x2 Backstab multiplier for knockout blows.</span></li>
-            <li><strong>Chemical Slumber:</strong> Laudanum Tincture [4.10], Church Incense Cones [10.19]<br><span class="mechanics">Save vs. Poison or fall into deep sleep.</span></li>
-        </ul>
+    <h2 class="section-title">3. The Study, Parlour & Game Room</h2>
+    <blockquote>"I recall a rather tense game of billiards with a visiting dignitary. When he suddenly sprouted tentacles, a faux pas of the highest order, I found that an ivory billiard ball secured in a stout woollen sock proved a most eloquent counter-argument to his appalling lack of etiquette."</blockquote>
 
-        <h3>II. Misdirection & Sensory Deprivation</h3>
-        <p><em>When the party must pass unseen, or an enemy spellcaster must be violently interrupted mid-incantation.</em></p>
-        <ul class="appendix-list">
-            <li><strong>Auditory Decoys:</strong> Brass Pocket Watch [1.20], Heavy Chess Piece [3.15], Rusty Iron Hinges [7.19]<br><span class="mechanics">Draws sentry attention away from the party's Hide in Shadows attempt.</span></li>
-            <li><strong>Blinding Powders:</strong> Sack of Gravel [5.15], Plaster Dust [7.14], Coal Scuttle [7.20], Beeswax Votive Candles [10.03]<br><span class="mechanics">Target is Blinded; loses AC dexterity bonuses and line-of-sight.</span></li>
-            <li><strong>Respiratory Disruption:</strong> Heavy Pepper Mill [2.18], Ammonia Spirits [4.06], Ground Cayenne Pepper [6.17]<br><span class="mechanics">Interrupts somatic/verbal components; Save vs. Poison to act.</span></li>
-        </ul>
+    <div class="card-grid">
+        <div class="card"><div class="card-header">01 - Pewter Tumbler (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Serves evening libations. When the wide end is pressed to an oak door, it acts as an improvised listening cone.</div><div class="mechanics">Greatly enhances one's ability to eavesdrop. Grants a +10% bonus to Hear Noise checks through solid wooden doors.</div></div>
+        <div class="card"><div class="card-header">02 - Silver Serving Tray (3 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Presents the roast fowl. An improvised buckler that is highly reflective and perfectly socially acceptable to carry.</div><div class="mechanics">Wedged into a corridor corner, it allows the party to observe the next room without exposing themselves to a basilisk's gaze.</div></div>
+        <div class="card"><div class="card-header">03 - Snuff Box & Tobacco (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Offered during card games. Discreetly flicked into an overly inquisitive guard's eyes to devastating effect.</div><div class="mechanics">Blown into the air to reveal invisible stalkers, or flicked into the eyes to force a Save vs. Poison to avoid immediate blindness.</div></div>
+        <div class="card"><div class="card-header">04 - Iron Gall Ink (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">A highly acidic ink used for permanent ledger entries.</div><div class="mechanics">Poured over a glowing crystal or a Light spell to create an impromptu dark lantern, directing a narrow beam to read by safely.</div></div>
+        <div class="card"><div class="card-header">05 - Bookbinding Glue (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Boiled animal hide glue that sets incredibly hard and sticky.</div><div class="mechanics">Poured directly into the intricate runic grooves of a magical puzzle door, jamming the physical components before the spell triggers.</div></div>
+        <div class="card"><div class="card-header">06 - Brass Paperweight (2 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">A heavy brass lump used for unruly parchment. Quite convincing when applied to the base of the cranium.</div><div class="mechanics">Dropped from a height onto a pressure plate to safely trigger an arrow trap. Functions as a sap for Subdual damage.</div></div>
+        <div class="card"><div class="card-header">07 - Silver Letter Opener (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Elegantly slices correspondence and presumptuous supernatural beasts averse to silver.</div><div class="mechanics">Slid between a door and its frame to depress spring latches. Functions mechanically as a Silver Dagger against lycanthropes.</div></div>
+        <div class="card"><div class="card-header">08 - Pounce Powder (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">A fine pumice used to dry wet ink. Thrown in a wide arc, it settles upon and reveals invisible scoundrels.</div><div class="mechanics">Blown lightly across a treasure chest to reveal the tiny, wiped-clean fingerprints of a previous thief.</div></div>
+        <div class="card"><div class="card-header">09 - Fireplace Poker (3 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Tends the hearth fires. A heavy iron rod with a hooked end, perfect for prying open reluctance.</div><div class="mechanics">Acts as an improvised crowbar. Grants a +1 bonus to Open Doors checks for stubborn or swollen dungeon portals.</div></div>
+        <div class="card"><div class="card-header">10 - Chimney Soot / Ash (0.5 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Swept from the grand hearths. Rubbed on the face and livery to dissolve into the dark.</div><div class="mechanics">Eliminates the glare of pale skin, allowing one to vanish gracefully. Grants a +10% situational bonus to Hide in Shadows.</div></div>
+        <div class="card"><div class="card-header">11 - Velvet Drape Cords (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Thick braided silk with heavy brass tassels. Utilised to tie back the morning curtains.</div><div class="mechanics">Tied low across a darkened staircase to create a completely silent, non-metallic tripwire that bypasses dwarven trap detection.</div></div>
+        <div class="card"><div class="card-header">12 - Ivory Billiard Balls (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Leisure gaming for the Master's esteemed guests.</div><div class="mechanics">Rolled down steep stairs to safely test for pressure plates. Placed within a stout woollen sock, it becomes a skull-crushing flail.</div></div>
+        <div class="card"><div class="card-header">13 - Waxed Playing Cards (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Essential for late-night parlour wagers. Stiff enough to be slipped into doorframes to depress simple latches.</div><div class="mechanics">Quietly bypasses simple locks and latch mechanisms without the need for suspicious iron tools.</div></div>
+        <div class="card"><div class="card-header">14 - Peacock Feather (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">An ostentatious, iridescent decoration. Held perfectly still, it detects the faintest air currents.</div><div class="mechanics">Tests for secret drafts, or held to the mouth of an unconscious noble to verify if an ingested poison has ceased respiration.</div></div>
+        <div class="card"><div class="card-header">15 - Heavy Chess Piece (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Specifically the Rook, carved from dense marble.</div><div class="mechanics">Tossed down a side corridor to create a sharp, distinct clatter, directing a sentry's attention away from the party's true infiltration path.</div></div>
+        <div class="card"><div class="card-header">16 - Brass Metronome (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Keeps precise musical time for the string quartet.</div><div class="mechanics">The rhythmic ticking perfectly masks the metallic clicking of meticulous lockpicking in a quiet corridor.</div></div>
+        <div class="card"><div class="card-header">17 - Briar Pipe Cleaners (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Used to clear the Master's smoking pipes of built-up resin.</div><div class="mechanics">Woven together to safely extract dropped keys through narrow iron floor grates without raising an alarm.</div></div>
+        <div class="card"><div class="card-header">18 - Magnifying Glass (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Assists the Master in reading fine print on contracts.</div><div class="mechanics">Focuses sunlight to ignite dry tinder. Used to meticulously examine a lock mechanism for poison needles (+5% Find Traps).</div></div>
+        <div class="card"><div class="card-header">19 - Heavy Bookends (4 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Keeps the library organised. Heavy blocks of solid granite.</div><div class="mechanics">Wedged hurriedly beneath a descending stone portcullis. Its immense weight prevents the stone from fully crushing the escape route.</div></div>
+        <div class="card"><div class="card-header">20 - Wax Seal Stamp (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Used to stamp the House crest into hot wax.</div><div class="mechanics">Heated in the hearth and pressed directly against a chilled dungeon lock to slightly expand the metal, unseizing rusted tumblers.</div></div>
+    </div>
 
-        <div class="calligraphic-box">
-            <h2>THE OATH OF THE SILVER KEY</h2>
-            <p>"I do hereby swear, upon my honour as a gentleman and a servant, to uphold the pristine order of my appointed estate. I shall wield the mundane as the extraordinary. I shall allow no disruption to soil the Master's carpets, nor any chaos to interrupt the evening tea. My discretion is my armour, and my etiquette is my weapon."</p>
-            <p style="text-align: right; margin-top: 10px;"><em>Signature of Initiate: ________________________</em></p>
-        </div>
+    <div class="page-break"></div>
 
-    </div> 
-</body>
-</html>
+    <h2 class="section-title">4. The Infirmary, Washroom & Laundry</h2>
+    <blockquote>"A gentleman's ablutions are a private affair, though occasionally interrupted by water weirds drawn to the estate's plumbing. I highly recommend maintaining a surplus of Azure Sea bathing salts; they are as soothing to the Master's muscles as they are catastrophically desiccating to water-based aberrations."</blockquote>
+
+    <div class="card-grid">
+        <div class="card"><div class="card-header">01 - Shaving Soap (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Lathers for grooming. The soap creates an exceptional, localised slipping hazard to confound assailants.</div><div class="mechanics">Smothered thickly over a squeaky chest hinge or heavy iron door to ensure it opens in complete, decorous silence.</div></div>
+        <div class="card"><div class="card-header">02 - Boar Bristle Brush (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Lathers soap. Safely sweeps dust from trap seams without triggering pressure plates.</div><div class="mechanics">Essential for clearing dungeon debris to properly disarm complex floor traps without accidentally applying fatal pressure.</div></div>
+        <div class="card"><div class="card-header">03 - Natural Sea Sponge (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Used for bathing. Absorbs liquid poisons safely for transport, or pads the soles of boots for silent steps.</div><div class="mechanics">Grants a +5% bonus to Move Silently checks when forced to navigate echoing stone corridors or marble halls.</div></div>
+        <div class="card"><div class="card-header">04 - Pumice Stone (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Exfoliates calluses. Patiently and silently files down iron window bars over several nights.</div><div class="mechanics">Can be crushed into a fine grit and poured into a lock to permanently and irrevocably jam the tumblers against pursuit.</div></div>
+        <div class="card"><div class="card-header">05 - Azure Sea Salts (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Rich minerals dissolved in hot baths to soothe muscles.</div><div class="mechanics">Inflicts severe, localised dehydration. Deals 1d6 damage to oozes and water elementals when thrown as a splash weapon.</div></div>
+        <div class="card"><div class="card-header">06 - Ammonia Spirits (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">A harsh chemical solvent used for heavy stain removal on linens; possesses a violently pungent odour.</div><div class="mechanics">Thrown as a splash weapon, it induces severe nausea. Wafted to clear away the lingering effects of a Stinking Cloud spell.</div></div>
+        <div class="card"><div class="card-header">07 - Lye Soap Bars (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">An extremely harsh soap meant for boiling filthy scullery rags.</div><div class="mechanics">Highly alkaline. Rubbed thickly onto the hands, it prevents severe acid burns when forced to manipulate acidic trap mechanisms.</div></div>
+        <div class="card"><div class="card-header">08 - Starch Powder (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Ensures collars remain impeccably stiff. Lightly blown into a drafty corridor to reveal faint lines of tripwires.</div><div class="mechanics">Reveals the shimmering silhouette of invisible stalkers or hidden mechanisms within a short distance.</div></div>
+        <div class="card"><div class="card-header">09 - Medical Leeches (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Prescribed for bloodletting. Applied quietly to a sleeping guard to enforce lethargy.</div><div class="mechanics">Causes continuous, painless blood loss, ensuring the target wakes in a state of severe, lethargic weakness.</div></div>
+        <div class="card"><div class="card-header">10 - Laudanum Tincture (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Potent opiate drops; slipped discreetly into an uncouth target's evening drink.</div><div class="mechanics">Induces a deep, unshakeable slumber, politely enforcing an early bedtime upon an adversary. Target must Save vs. Poison or sleep.</div></div>
+        <div class="card"><div class="card-header">11 - Surgical Scalpel (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Kept sterile for lancing boils; easily palmed within a gloved hand.</div><div class="mechanics">Its extreme sharpness ignores thick leather armour. Functions as a Knife (Speed Factor 2). Permits the x2 Backstab multiplier.</div></div>
+        <div class="card"><div class="card-header">12 - Linen Bandages (0.5 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Binds wounds tightly to encourage proper healing.</div><div class="mechanics">Wrapped tightly around the tip of a ten-foot pole and soaked in lamp oil to create an improvised torch, or used to safely gag a spellcaster.</div></div>
+        <div class="card"><div class="card-header">13 - Hot Water Bottle (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Warms the bedsheets on cold winter nights at the estate.</div><div class="mechanics">Filled with heated water and placed on a pressure plate. Its weight mimics a footstep, while its eventual cooling triggers a delayed release.</div></div>
+        <div class="card"><div class="card-header">14 - Mortar & Pestle (3 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Grinds apothecare herbs into fine medicinal powders.</div><div class="mechanics">Used to crush luminescent fungi into a glowing paste, allowing the party to mark safe paths without the heat signature of a torch.</div></div>
+        <div class="card"><div class="card-header">15 - Castor Oil (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">A potent digestive aid for the Master.</div><div class="mechanics">Imbues a steep stone staircase with treacherous slickness. Pursuers must roll a Dexterity check or suffer a precipitous tumble.</div></div>
+        <div class="card"><div class="card-header">16 - Brass Tweezers (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Exquisitely precise tools for removing painful splinters.</div><div class="mechanics">Ideal for safely extracting poisoned needles from a trapped lock mechanism. Grants a +5% bonus to Find/Remove Traps.</div></div>
+        <div class="card"><div class="card-header">17 - Heavy Bath Towel (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Dries the Master after his morning ablutions.</div><div class="mechanics">Snapped with expert precision, it safely triggers a tension trap from a distance. Soaked in water, it provides a safe filter through smoke.</div></div>
+        <div class="card"><div class="card-header">18 - Washing Paddle (3 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">A sturdy, flat wooden club used to beat dirt from heavy laundry.</div><div class="mechanics">Tests the floor ahead for pit traps. Spreads weight evenly if laid across a fragile pressure plate to allow safe passage.</div></div>
+        <div class="card"><div class="card-header">19 - Clothes Pegs (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Simple wooden pegs that hold wet laundry to the drying lines.</div><div class="mechanics">Pinches the nostrils firmly shut to safely traverse corridors flooded with noxious or hallucinogenic gases without inhaling the fumes.</div></div>
+        <div class="card"><div class="card-header">20 - Zinc Oxide Powder (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">A soothing white powder that prevents chafing under heavy garments.</div><div class="mechanics">Mixed with water, it creates a thick white paste used to camouflage the party against stark white limestone walls.</div></div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2 class="section-title">5. The Estate Grounds & Gardens</h2>
+    <blockquote>"The rustic nature of the outdoors frequently requires robust solutions. When a band of opportunistic brigands attempted to requisition the grounds during the Master's absence, the Head Gardener repelled them entirely by vigorously misapplying a wheelbarrow, a sack of guano, and a profound understanding of rudimentary leverage."</blockquote>
+
+    <div class="card-grid">
+        <div class="card"><div class="card-header">01 - Pruning Sickle (2 lbs)</div><div class="card-meta"><span>Concealability: Sleeve</span></div><div class="card-notes">Trims overgrowth from the rose bushes. An unrefined blade that easily hooks an opponent's ankle.</div><div class="mechanics">Requires a Called Shot to the legs. On a hit, forces a Dexterity check; failure results in the target being tripped and rendered prone.</div></div>
+        <div class="card"><div class="card-header">02 - Iron Trowel (1 lb)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Plants spring bulbs. Expertly designed for carefully excavating buried mechanisms.</div><div class="mechanics">Grants a +5% bonus to the Find/Remove Traps skill when unearthing outdoor pit traps or buried tension plates.</div></div>
+        <div class="card"><div class="card-header">03 - Foxglove Extract (0.5 lbs)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">A diluted spray to discourage pests. Concentrated, it induces a highly natural-looking cessation of the heart.</div><div class="mechanics">Functions as an Ingested Poison (Type J). Target must Save vs. Poison or suffer fatal cardiac arrest.</div></div>
+        <div class="card"><div class="card-header">04 - Sack of Guano (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">A highly pungent fertiliser. When tossed into a campfire, it produces a choking smoke screen.</div><div class="mechanics">Creates a 10-foot radius cloud of obscuring smoke. Those caught within must Save vs. Poison or be blinded by tears for 1d4 rounds.</div></div>
+        <div class="card"><div class="card-header">05 - Heavy Jute Twine (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Ties up tomato plants. Strung tightly at ankle height across a darkened dungeon corridor.</div><div class="mechanics">An invisible, mundane tripwire that bypasses magical detection. Charging enemies must roll a Dexterity check or fall prone.</div></div>
+        <div class="card"><div class="card-header">06 - Iron Rake (4 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Clears autumn leaves. Placed teeth-up in the mud beneath a window to greet an intruder's visage.</div><div class="mechanics">Stepping on the tines flips the handle upwards. Target suffers 1d2 damage and must Save vs. Paralyzation or be stunned for one round.</div></div>
+        <div class="card"><div class="card-header">07 - Garden Shears (3 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Prunes heavy branches. A devastating severing tool capable of quietly cutting through thick ropes.</div><div class="mechanics">Instantly severs the control ropes of enemy siege engines or drops heavy chandeliers upon targets below.</div></div>
+        <div class="card"><div class="card-header">08 - Wooden Wheelbarrow (15 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Hauls dirt. Overturned in a narrow stone hallway, it creates a robust and immediate barricade.</div><div class="mechanics">Completely blocks a standard 5-foot corridor, forcing pursuers to waste precious rounds dismantling the obstacle.</div></div>
+        <div class="card"><div class="card-header">09 - Sundial Gnomon (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Casts the sun's shadow. A heavy bronze spike easily removed and employed as an utterly unyielding door wedge.</div><div class="mechanics">Hammered beneath an ironbound door, it effectively spikes the portal shut, requiring a successful Bend Bars/Lift Gates roll to bypass.</div></div>
+        <div class="card"><div class="card-header">10 - Copper Watering Can (3 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Hydrates the hydrangeas. Swung by the handle, the heavy copper base delivers a stunning blow.</div><div class="mechanics">Functions mechanically as a Club (Speed Factor 4, Damage 1d6). Can safely transport acidic slimes or volatile alchemical liquids.</div></div>
+        <div class="card"><div class="card-header">11 - Heavy Iron Chain (10 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Secures the main carriage gates. Wrapped tightly around the knuckles, it guarantees victory in a vulgar fistfight.</div><div class="mechanics">Enhances unarmed combat, dealing 1d3 damage plus Strength modifiers. Used to securely bar double doors from the inside.</div></div>
+        <div class="card"><div class="card-header">12 - Bird Netting (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Protects the strawberries. Dropped from a tree branch, it hopelessly entangles and panics an unwary scout.</div><div class="mechanics">Target must roll a successful Save vs. Paralyzation or be completely restrained, halving their Armour Class.</div></div>
+        <div class="card"><div class="card-header">13 - Scarecrow Stakes (3 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Supports straw effigies. Sharpened hardwood poles of considerable length.</div><div class="mechanics">Serves flawlessly as a ten-foot pole to probe suspicious dungeon tiles, or functions as a Javelin (Speed Factor 4, Damage 1d6).</div></div>
+        <div class="card"><div class="card-header">14 - Whetstone (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Hones spades and sickles. Struck firmly against a steel blade in the dark.</div><div class="mechanics">Creates a sudden shower of sparks, serving as a momentary visual distraction or igniting spilled oil without flint and steel.</div></div>
+        <div class="card"><div class="card-header">15 - Sack of Gravel (5 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Lines the walkways. Thrown in a handful, it acts as an abrasive, blinding blast to the face.</div><div class="mechanics">Requires a Called Shot (-4 to hit). A hit blinds the target for 1d3 rounds. Tossed onto the floor to safely reveal invisible pit illusions.</div></div>
+        <div class="card"><div class="card-header">16 - Pitchfork (5 lbs)</div><div class="card-meta"><span>Concealability: Overt</span></div><div class="card-notes">Moves hay in the stables. A four-tined polearm perfectly suited for keeping aggressive wildlife at a polite distance.</div><div class="mechanics">Functions as a Trident (Speed Factor 7, Damage 1d6+1). Ideal for safely probing deep water or mud for submerged aquatic threats.</div></div>
+        <div class="card"><div class="card-header">17 - Charcoal Briquettes (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Fuels the greenhouse stove. Crushed into a fine powder and ingested with water.</div><div class="mechanics">Acts as a mundane toxin binder. Grants a +2 bonus to Saving Throws against ingested poisons or tainted tavern ale.</div></div>
+        <div class="card"><div class="card-header">18 - Dried Brambles (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Cleared overgrowth. Dropped hastily behind a fleeing party in a narrow passage.</div><div class="mechanics">Forms an agonising, natural barricade. Pursuers must move at half speed or suffer 1d4 points of piercing damage from the thorns.</div></div>
+        <div class="card"><div class="card-header">19 - Gardening Gloves (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Thick leather to protect hands from thorns. Allows the wearer to safely handle corrosive slimes.</div><div class="mechanics">Grants immunity to contact poisons and acidic secretions when required to manually disarm coated trap mechanisms.</div></div>
+        <div class="card"><div class="card-header">20 - Tree Sap / Resin (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Seals pruned cuts on fruit trees. Highly adhesive when warmed in the hands.</div><div class="mechanics">Smeared heavily onto the soles of one's boots to provide extraordinary grip, entirely negating the effects of the Grease spell.</div></div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2 class="section-title">6. Requisitions From the Marketplace</h2>
+    <blockquote>"The market is not merely for acquiring truffles and fine wine; it is an auxiliary armoury. Remember poor Jenkins, who forgot his sack of dried lentils and was forced to engage a ruffian using only a rather firm rutabaga. He survived, but the indignity has forever stained his references."</blockquote>
+
+    <div class="card-grid">
+        <div class="card"><div class="card-header">01 - High-Proof Brandy (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Warms cold carriage rides. Sterilises wounds effectively, or functions as a devastating incendiary device.</div><div class="mechanics">Ignites instantly when exposed to a spark. Poured under a door, it creates a wall of fire dealing 1d6 damage to anyone attempting a breach.</div></div>
+        <div class="card"><div class="card-header">02 - Block of Animal Fat (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Culinary preservation. Rubbed generously on squeaky armour joints or rusted hinges to ensure utter silence.</div><div class="mechanics">Reduces the stealth penalty for wearing heavy armour by 10%. Greasing a sloped floor creates a hazard requiring a Dexterity check.</div></div>
+        <div class="card"><div class="card-header">03 - Heavy Butcher's Hook (2 lbs)</div><div class="card-meta"><span>Concealability: Satchel</span></div><div class="card-notes">Hangs heavy carcasses. Tied to a stout rope to act as a robust grappling hook for scaling manor walls.</div><div class="mechanics">Grants a +10% bonus to Climb Walls checks when scaling sheer stone. Functions as an improvised slashing weapon (Damage 1d4).</div></div>
+        <div class="card"><div class="card-header">04 - Dried Chestnuts (1 lb)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">A healthy snack. Scattered heavily in dark corridors to crunch loudly under errant boots.</div><div class="mechanics">Acts as a perfectly mundane alarm system. Impossible to step on silently, negating an approaching enemy's Move Silently skill.</div></div>
+        <div class="card"><div class="card-header">05 - Glass Beads (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">Used in parlour games. Rolled silently onto the floor to test for subtle, trap-inducing slopes.</div><div class="mechanics">Cascaded down a flight of stone stairs, they function mechanically as Caltrops, forcing a Dexterity check to avoid a tumbling fall.</div></div>
+        <div class="card"><div class="card-header">06 - Strong Fishing Gut (Negligible)</div><div class="card-meta"><span>Concealability: Pocket</span></div><div class="card-notes">For weekend angling. Nearly invisible in the dark for discreet tripwires or safely retrieving objects.</div><div class="mechan
