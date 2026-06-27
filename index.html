@@ -22,26 +22,20 @@
         font-size: 16px; 
     }
 
-    /* The Photorealistic Cover Plate */
+ /* The New Custom Image Cover Plate */
     .cover-plate {
         height: 100vh;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: url('https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
-        box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
         page-break-after: always;
     }
 
-    .cover-overlay {
-        background: rgba(15, 12, 10, 0.85);
-        border: 2px solid #b39b72;
-        padding: 40px 20px;
-        margin: 20px;
-        text-align: center;
+.cover-plate img {
+        max-width: 100%;
+        max-height: 95vh; /* Prevents the image from forcing you to scroll slightly */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds a nice drop shadow to the book */
         border-radius: 4px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     }
 
     .cover-overlay h1 { color: #e6d7ba; border: none; font-size: 2.2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.9); margin-bottom: 10px; margin-top: 0; }
@@ -132,12 +126,8 @@
 </head>
 <body>
 
-    <div class="cover-plate">
-        <div class="cover-overlay">
-            <h1>A Comprehensive Ledger of Estate Linens</h1>
-            <h3>Volume IV: Winter Storage & Moth Prevention</h3>
-            <p>Compiled by P. Sterling<br>Master of the Wardrobe</p>
-        </div>
+<div class="cover-plate">
+        <img src="cover-image.png" alt="A Comprehensive Ledger of Estate Linens and Haberdashery">
     </div>
 
     <div class="content-wrapper">
